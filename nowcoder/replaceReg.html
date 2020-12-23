@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+
+          function replaceReg(arr) {
+              var group = []
+              for(var i=0;i<arr.length-1;i++){
+                  for(var j=i+1;j<arr.length;j++){
+                      arr[i] == arr[j]&&group.indexOf(arr[i]) == -1&&group.push(arr[i])
+                      debugger
+                  }
+              }
+              return group
+          }
+
+          replaceReg([1, 2, 4, 4, 3, 3, 1, 5, 3])
+
+	</script>
+  </body>
+</html>

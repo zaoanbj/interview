@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+
+          function rgb2hex(sRGB) {
+            var reg = /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/;
+            var result = sRGB.match(reg);
+            debugger
+            console.log(result);
+            var txt = '#';
+
+            if (!result) {
+                return sRGB;
+            } else {
+                for(var i=1;i<4;i++){
+                    var m = parseInt(result[i]);
+                    if(m<=255 && m >= 0) {
+                        txt += m<16 ? '0' + m.toString(16) : m.toString(16)
+                    } else {
+                        return sRGB;
+                    }
+                }
+            }
+
+            return txt
+          }
+
+          document.querySelector('#root').innerText = rgb2hex('rgb(255, 255, 255)');
+
+	</script>
+  </body>
+</html>

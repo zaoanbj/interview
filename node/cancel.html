@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dom{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <button id="cancel">cancel</button>
+    <script>
+        var btn = document.getElementById('btn');
+        var cel = document.getElementById('cancel');
+
+        /*var xhr;
+        btn.onclick = function(){
+            //alert(1);
+            xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost:8000/delay');
+            xhr.send(null);
+            /!*
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    dom.innerHTML += xhr.responseText;
+                }
+            }
+            *!/
+        }
+        cel.onclick = function(){
+            xhr.abort();
+        }*/
+    </script>
+</body>
+</html>

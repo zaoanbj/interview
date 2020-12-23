@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+          function iterate(obj) {
+                var arr = [];
+                for(var item in obj) {
+                    if (obj.hasOwnProperty(item)) {
+                        arr.push(item+':  '+obj[item])
+                    }
+                }
+                console.log(arr)
+                return arr
+          }
+          function iterate(obj) {
+              return Object.keys(obj).map(key => key + ": " + obj[key]);
+          }
+          var C = function() {this.foo = 'bar'; this.baz = 'bim';};
+          C.prototype.bop = 'bip';
+          //console.log(cssStyle2DomStyle('font-size'));
+          document.querySelector('#root').innerText = iterate(new C());
+	</script>
+  </body>
+</html>

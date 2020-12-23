@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>test</title>
+</head>
+<style type="text/css">
+    html,body{
+        margin:0;
+        padding:0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    nav, footer {
+        width: 100%;
+        height: 100px;
+        background: #ccc;
+    }
+    main{
+        min-height: calc(100% - 200px);
+        display: flex;
+    }
+    #left{
+        width: 200px;
+        background: #333;
+    }
+    #right{
+        flex: 1;
+        background: #ddd;
+    }
+    @media (max-width : 480px){
+        main {
+            flex-direction: column;
+        }
+        #left{
+            width: 100%;
+        }
+    }
+
+</style>
+<body>
+    <nav>导航栏</nav>
+    <main>
+        <div id="left">侧边栏</div>
+        <div id="right">主要内容</div>
+    </main>
+    <footer>简介简介</footer>
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>

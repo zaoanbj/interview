@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dom{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <div id="dom"></div>
+    <script>
+        var btn = document.getElementById('btn');
+        var dom = document.getElementById('dom');
+
+
+        /*btn.onclick = function(){
+            //alert(1);
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost:8000/delay');
+            xhr.timeout = 1000;
+            xhr.ontimeout = function () {
+                alert('请求超时')
+            }
+            xhr.onerror = function (){
+                alert('网络异常')
+            }
+            xhr.send(null);
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    dom.innerHTML += xhr.responseText;
+                }
+            }
+
+        }*/
+    </script>
+</body>
+</html>

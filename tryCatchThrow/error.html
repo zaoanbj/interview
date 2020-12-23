@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<script type="text/javascript">
+        try{
+            var a;
+            a.c();
+        } catch(error){
+            console.log(error);
+        }
+    </script>
+    <script type="text/javascript">
+        function t() {
+            throw new Error('测试throw')
+        }
+
+        try{
+            t()
+        } catch (error) {
+            console.log(error)
+        }
+    </script>-->
+    <script type="text/javascript">
+        'use strict'
+        try{
+            throw new Error('asdf')
+        }catch(error){
+            alert(1)
+        }finally{
+            alert(2)
+        }
+    </script>
+</body>
+</html>

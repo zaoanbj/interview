@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var p = 'zls-an-hui';
+        var l = p.split('-');
+        for (var i = 1; i < l.length; i++) {
+            l[i] = (l[i].charAt(0).toUpperCase() + l[i].substr(1, l[i].length - 1));
+        }
+        l = l.join('')
+        console.log(l);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

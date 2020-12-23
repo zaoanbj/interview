@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+
+          function getUrlParam(sUrl, sKey) {
+              var result, sParam = {};
+              sUrl.replace(/[\?&]?(\w+)=(\w+)/g, function(k0, k1, k2){
+                  debugger
+                  sParam[k1] === void 0 ? sParam[k1] = k2 : sParam[k1] = [].concat(sParam[k1], k2);
+              });
+              sKey === void 0 || sKey === '' ? result = sParam : result = sParam[sKey] || '';
+              console.log(result);
+              return result;
+          }
+
+          document.querySelector('#root').innerText = getUrlParam('http://www.nowcoder.com?key=1&key=2&key=3&test=4#hehe', '');
+
+	</script>
+  </body>
+</html>

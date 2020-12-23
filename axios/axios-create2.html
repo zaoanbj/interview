@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>axios</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script type="text/javascript">
+        axios.interceptors.request.use(
+            config => {
+                console.log('interceptors request1');
+                return config;
+            },
+            error => {
+                console.log(error.message);
+                return Promise.reject(error);
+            }
+        );
+        axios.interceptors.request.use(
+            config => {
+                console.log('interceptors request2');
+                return config;
+            },
+            error => {
+                console.log(error.message);
+                return Promise.reject(error);
+            }
+        );
+        axios.interceptors.response.use(
+            response => {
+                console.log('interceptors response1');
+                return response;
+            },
+            error => {
+                console.log(error.message);
+                return Promise.reject(error);
+            }
+        )
+        axios.interceptors.response.use(
+            response => {
+                console.log('interceptors response2');
+                return response;
+            },
+            error => {
+                console.log(error.message);
+                return Promise.reject(error);
+            }
+        )
+        axios
+        .get('http://localhost:8000/server')
+        .then(
+            value=>console.log(value),
+            reason=>console.log(reason)
+        )
+    </script>
+</head>
+
+
+</body>
+</html>

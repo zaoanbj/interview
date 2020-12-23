@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+          //找出数组 arr 中重复出现过的元素
+          function duplicates(arr) {
+              var arr2 = [], size = arr.length;
+              for(var i=0;i<size;i++){
+                  for(var j=i+1;j<size;j++){
+                      if(arr[i] == arr[j]&&arr2.indexOf(arr[i])==-1){
+                          arr2.push(arr[i])
+                      }
+                  }
+              }
+              return arr2.sort();
+          }
+          console.log(duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3]));
+      </script>
+  </body>
+</html>

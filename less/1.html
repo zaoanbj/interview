@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/less">
+    @r:red;
+    @w:width;
+    #wrap{
+        position:relative;
+        @{w}: 200px;
+        height: 200px;
+        border:@r solid 1px;
+        margin: 0 auto;
+        #demo1{
+            @{w}:150px;
+            height:150px;
+            position: absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            margin: auto;
+            border:1px @r solid;
+        }
+        #demo2{
+                @{w}:150px;
+            height:150px;
+            position: absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            margin: auto;
+            border:1px @r solid;
+        }
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <div id="demo1"></div>
+        <div id="demo2"></div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/less.js/3.10.0-beta/less.js"></script>
+</body>
+</html>

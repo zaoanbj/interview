@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>axios</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script type="text/javascript">
+        var instance1 = axios.create({
+            baseURL:'http://localhost:9000'
+        })
+
+        instance1({
+            url:'/data'
+        })
+
+        var instance2 = axios.create({
+            baseURL: 'http://localhost:8000'
+        })
+
+        instance2({
+            url:'/server'
+        })
+    </script>
+</head>
+
+
+</body>
+</html>

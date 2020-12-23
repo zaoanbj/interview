@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container > div {
+            width: 100px;
+            height: 50px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="container">
+        <h1>点击变色</h1>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>-->
+<script>
+   /* var l = document.querySelectorAll('#container div');
+    console.log(l, l.length);
+    for(var i=0;i<l.length;i++){
+        console.log(i);
+    }
+    console.log(i);*/
+</script>
+
+<script>
+   /*const obj = {
+       name: 'zld',
+       age: 23,
+       jj () {
+           alert(1)
+       }
+   }
+
+   let {name, age, jj} = obj
+    console.log(name);
+    console.log(age);
+    console.log(jj);*/
+    //jj();
+</script>
+
+</body>
+</html>
+
+<script>
+    /*let s1 = Symbol();
+     console.log(s1);
+     let s2 = Symbol('zls');
+     let s3 = Symbol('zls')
+     console.log(s2 === s3);
+     let s4 = Symbol.for('zls');
+     let s5 = Symbol.for('zls');
+     console.log(s4 === s5);*/
+
+    /*function * demo() {
+     console.log('1');
+     yield 'one';
+     console.log('2');
+     yield 'two';
+     console.log('3');
+     yield 'three';
+     }
+     var iterator = demo();
+
+     console.log(iterator.next());
+     console.log(iterator.next());
+     console.log(iterator.next());
+
+     for(var v of demo()){
+     console.log(v);
+     }*/
+
+    /*function * test(arg) {
+     console.log(arg);
+     yield 1;
+     yield 2;
+     yield 3;
+     }
+
+     let t = test(4);
+     console.log(t.next());*/
+
+    /*function one() {
+     setTimeout(()=>{
+     let data = 'one';
+     iterator.next(data);
+     },1000)
+     }
+
+     function two() {
+     setTimeout(()=>{
+     let data = 'two';
+     iterator.next(data);
+     },1000)
+     }
+
+     function three() {
+     setTimeout(()=>{
+     let data = 'three';
+     iterator.next(data);
+     },1000)
+     }
+
+     function  * gen() {
+     let one1 = yield one();
+     console.log(one1);
+     let two1 = yield two();
+     console.log(two1);
+     let three1 = yield three();
+     console.log(three1);
+     }
+
+     let iterator = gen();
+     console.log(iterator.next());*/
+
+    /*let s1 = new Set();
+    let s2 = new Set(['a', 'b', 'c', 'd', 'a']);
+    console.log(s2);
+    console.log(s2.size);
+    s2.add('e');
+    console.log(s2);
+    s2.delete('a');
+    console.log(s2);
+    console.log(s2.has('b'));
+    //s2.clear();
+    for(var v of s2){
+        console.log(v)
+    }
+    console.log(s2);*/
+
+    /*let m = new Map();
+    m.set('name','zls');
+    m.set('age', 12);
+    let obj = {k: 'abc'}
+    m.set(obj, ['a', 'b', 'c']);
+    m.delete('name');
+    console.log(m.size);
+    //m.clear();
+    for(var v of m) console.log(v)
+    console.log(m);*/
+    
+    /*function Phone(name, age) {
+        this.name = name
+        this.age = age
+    }
+    Phone.prototype.getname = function () {
+        return this.name
+    }
+
+    let p = new Phone('zls', 10);
+    console.log(p);*/
+
+    /*class Phone {
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        getname(){
+            console.log(this.name);
+        }
+        setname(){
+            this.name = 'zls'
+        }
+    }
+
+    let p = new Phone('zx', 12);
+    p.getname()*/
+
+    /*class Phone{
+
+        static name = 'zx';
+        static age = '12';
+        static pp(){
+            console.log(1)
+        }
+    }
+
+    console.log(Phone.name);
+    console.log(Phone.pp());
+
+    let p = new Phone();
+    console.log(p.name);
+    console.log(p.pp());*/
+
+    /*function Phone(name, age) {
+     this.name = name;
+     this.age = age;
+     }
+
+     Phone.prototype.call = function () {
+     console.log(1)
+     }
+
+     function SmartPhone(name, age, width, height) {
+     Phone.call(this, name, age);
+     this.width = width;
+     this.height = height;
+     }
+
+     SmartPhone.prototype = new Phone;
+     SmartPhone.prototype.constructor = SmartPhone;
+
+     let s = new SmartPhone('zx', 18, 50, 150);
+     SmartPhone.prototype.call2 = function () {
+     console.log(2)
+     }
+     console.log(s);
+     s.call();*/
+
+    /*class Phone {
+        constructor(age, name){
+            this.age = age;
+            this.name = name;
+        }
+        call(){
+            console.log(this.name)
+        }
+    }
+
+    class Phone2 extends Phone {
+
+        constructor(name, age, width){
+            super(age, name);
+            this.width = width;
+        }
+        call2(){
+            console.log(this.width)
+        }
+    }
+
+    console.log(Phone2);*/
+
+    /*class Phone{
+        constructor(name){
+            this.name = name;
+        }
+        call(){
+            console.log(this.name);
+        }
+    }
+
+    class PhoneC extends Phone{
+        constructor(name, age){
+            super(name);
+            this.age = age;
+        }
+
+        call(){
+            console.log( 'ok');
+        }
+        call2(){
+            console.log(this.age);
+        }
+    }
+
+    let p = new PhoneC('zx', 12);
+    p.call();*/
+
+   /* class P {
+        constructor(){
+            this.l = []
+        }
+        get name(){
+            return this.l
+        }
+        set name(val){
+            this.l.push(val);
+        }
+    }
+
+    let p = new P();
+    console.log(p.name);
+    p.name = '1';
+    console.log(p.name);*/
+
+   /*console.log(Object.is(isNaN, isNaN));
+   console.log(Object.is(10,9));
+
+    let o1={name:1}
+    let o2={name:2}
+    console.log(Object.assign(o1,o2));
+
+    let obj={name:1}
+    let arr = {
+        a: [1, 2, 3]
+    }
+    Object.setPrototypeOf(obj, arr);
+    console.log(obj);*/
+
+   /*let arr = [1,2,2,3];
+     console.log(arr.includes(1));
+     console.log(arr.includes(2));*/
+
+   /*async function a() {
+        //return 3
+        //return
+        //throw new Error('aa')
+        return new Promise((resolve,reject)=>{
+           //resolve('0')
+           reject(1)
+        })
+    }
+    let b = a();
+   b.then(
+       value=>console.log(value),
+       reason=>console.log(reason)
+   )*/
+
+    //console.log();
+    /*const p = new Promise((resolve,reject)=>{
+        //resolve(1);
+        reject(2);
+    })
+    async function a() {
+        try{
+            let result = await p;
+            console.log(result);
+        }catch(error){
+            console.log(error);
+        }
+    }
+    a()*/
+
+    /*function sendAjax() {
+        return new Promise((resolve,reject)=>{
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost:8000/axios');
+            xhr.send(null);
+            xhr.onreadystatechange = function(){
+                //debugger
+                if(xhr.readyState == 4){
+                    if(xhr.status == 200){
+                        resolve(xhr.responseText)
+                    } else {
+                        reject(xhr.status)
+                    }
+                }
+            }
+        })
+    }
+
+    let a = sendAjax();
+    a.then(
+        value=>console.log(value),
+        reason=>console.log(reason)
+    )
+
+    async function main() {
+        let aa = await sendAjax();
+        console.log(aa)
+    }
+    main()*/
+
+    /*let obj={
+        name: 'zls',
+        arr1: [1,2,3],
+        arr2:[4,5,6]
+    }
+
+    console.log(Object.keys(obj));
+    console.log(Object.values(obj));
+    console.log(Object.entries(obj));
+    let m = new Map(Object.entries(obj));
+    console.log(m)
+    console.log(m.get('name'))*/
+
+    /*let s = '1232zzhz济666经济';
+    //const reg = /\d+(?=经)/;
+    const reg = /(?<=济)\d+/;
+    console.log(reg.exec(s));*/
+
+    /*let s1 = Symbol();
+    console.log(s1, typeof s1);
+    let s2 = Symbol('zls');
+    let s3 = Symbol('zls');
+    console.log(s2 === s3);
+    let s4 = Symbol.for('an');
+    let s5 = Symbol.for('an');
+    console.log(s4 === s5);*/
+
+    /*let arr1 = ['a', 'aa', 'aaa'];
+    let arr2 = ['b', 'bb', 'bbb'];
+    let arr3 = [...arr1, ...arr2];
+    console.log(arr3);
+
+    function fun() {
+        console.log(arguments);
+    }
+    fun(arr1);
+    fun(...arr1);*/
+
+    /*let arr1 = ['a', 'aa', 'aaa'];
+    function fun(...args) {
+        console.log(...args);
+    }
+    fun(arr1);*/
+
+   /* let arr1 = ['a', 'aa', 'aaa'];
+    let fun = (arr1)=> console.log(arr1);
+    fun(arr1);*/
+
+   /*let obj = {
+       name: 'zz',
+       age: '13'
+   }
+
+   function fun({name=1, age=12}) {
+       console.log(name, age);
+   }
+
+   fun(obj);*/
+
+   /*let obj = {
+       up: function () {
+           console.log('a')
+       },
+       down: function () {
+           console.log('b')
+       }
+   }
+
+   let my = {
+       up:Symbol(),
+       down: Symbol()
+   };
+    obj[my.up] = function () {
+        console.log('my.up')
+    }
+    obj[my.down] = function () {
+        console.log('my.down')
+    }
+    console.log(obj)*/
+
+   /*let obj = {
+       [Symbol('an')](){
+           console.log('an');
+       },
+       [Symbol('hui')](){
+           console.log('hui')
+       }
+   }
+    obj[Symbol('an')]()
+   console.log(obj)*/
+
+   /*let s = new Set(['a', 'b', 'c', 'd', 'a']);
+   console.log(s);
+   s.add('e');
+    console.log(s);
+    console.log(s.has('a'));
+    s.delete('a');
+    console.log(s);
+    s.clear();
+    console.log(s);*/
+
+    /*let s = ['a', 'b', 'c', 'd', 'a'];
+    console.log([...new Set(s)]);*/
+
+    /*let s1 = ['a', 'b', 'c', 'd', 'a'];
+    let s2 = ['a', 'b', 'c'];
+    let resule = [...new Set(s1)].filter((item=>new Set(s2).has(item)));
+    console.log(resule)*/
+
+    /*function P(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    P.prototype.call = function () {
+        console.log(1)
+    }
+
+    let p1 = new P('zls', 40);
+    p1.call();*/
+
+    /*class P {
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        call(){
+            console.log(1)
+        }
+    }
+
+    let p1 = new P('zls', 30);
+    p1.call()*/
+
+    /*function Phone(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Phone.prototype.call = function () {
+        console.log(1)
+    }
+
+    function Iphone(name, age, sex) {
+        Phone.call(this, name, age);
+        this.sex = sex;
+    }
+
+    Iphone.prototype.cat = function () {
+        console.log(2)
+    }
+    Iphone.prototype = new Phone;*/
+
+    /*class P {
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        call () {
+            return this.name;
+        }
+    }
+
+    class M extends P {
+        constructor(name, age, sex){
+            super(name, age);
+            this.sex = sex;
+        }
+        call(){
+            console.log(1);
+        }
+    }*/
+
+    /*let s1 = ['a', 'b', 'c', 'd', 'a'];
+    console.log(s1.includes('a'));*/
+
+    async function fun() {
+        let a = await 1
+    }
+
+    let f = fun();
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>axios</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script type="text/javascript">
+        axios.defaults.baseURL = 'http://localhost:8000';
+        function axiosget(){
+            axios({
+                url: '/server',
+                method: 'get',
+                params: {
+                    id:1,
+                    age: 20
+                }
+            }).then(
+                value => console.log(value),
+                reason => console.log(reason)
+            )
+        }
+        function axiospost() {
+            axios({
+                url: '/server',
+                method: 'post',
+                data: {
+                    name: 'zx',
+                    age: 20
+                }
+            }).then(
+                value => console.log(value),
+                reason => console.log(reason)
+            )
+        }
+    </script>
+</head>
+    <button onclick="axiosget()">get</button>
+    <button onclick="axiospost()">post</button>
+
+</body>
+</html>

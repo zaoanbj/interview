@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+    /*
+        var p = new Promise((resolve, reject)=>{
+           var d = Date.now();
+           setTimeout(()=>{
+               if(d%2 === 0){
+                   resolve('成功')
+               } else {
+                   reject('失败')
+               }
+           }, 100)
+        });
+
+        p.then(
+            (value)=>{
+                alert(value)
+            },
+            (reason)=>{
+                alert(reason)
+            }
+        )
+    */
+
+    /*
+    new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            //resolve('resolved')
+            reject('rejected')
+        }, 100)
+    }).then(
+        (value)=>{
+            alert(value)
+        }/!*,
+        (reason)=>{
+            alert(reason)
+        }*!/
+    ).catch(
+        (reason)=>{
+            alert(reason)
+        }
+    )
+    */
+
+    /*
+    var p1 = new Promise((resolve, reject)=>{
+        resolve(1)
+    })
+
+    var p2 = Promise.resolve(2);
+    var p3 = Promise.reject(3);
+
+    p1.then(ralue=>console.log(ralue));
+    p2.then(value=>console.log(value));
+    p3.then(null, reason=>console.log(reason));
+    p3.catch(reason=>console.log(reason));
+    */
+
+    /*var p4 = Promise.all([p1, p2, p3]);
+    p4.then(
+        values=>console.log(values),
+        reason=>console.log(reason)
+    )
+
+    var p5 = Promise.race([p1, p2, p3]);
+    p5.then(
+        value=>console.log(value),
+        reason=>console.log(reason)
+    );
+    */
+
+    try {
+        var p6 = new Promise((resolve, reject) => {
+            throw new Error(1)
+        }).catch(
+            reason=>console.log(reason)
+        )
+    }catch(err){
+        alert(err)
+    }
+
+    </script>
+</body>
+</html>

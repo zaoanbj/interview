@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="./libs/Promise.js"></script>
+    <script type="text/javascript">
+
+        //let myPromise = new Promise();
+
+        /*var p1 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                // resolve(1);
+                reject(2);
+            });
+        });
+        p1.then(
+            value=>console.log('resolve1-'+value),
+            reason=>console.log('reject1-'+reason)
+        )
+        p1.then(
+            value=>console.log('resolve2-'+value),
+            reason=>console.log('reject2-'+reason)
+        )
+        */
+        /*var p1 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(1);
+                //reject(2);
+            });
+        }).then(
+            value=>console.log('resolve1-'+value),
+            reason=> {
+                console.log('reject1-' + reason)
+                //return 2
+                //throw 4
+                return new Promise((resolve, reject)=>{
+                    reject(5)
+                })
+            }
+        ).then(
+            value=>console.log('resolve2-'+value),
+            reason=> {
+                console.log('reject2-'+reason);
+                throw 6
+            }
+        ).catch(
+            reason=> {
+                console.log('reject3-' + reason);
+                return new Promise(()=>{})
+            }
+        ).then(
+            value=>console.log('resolve4-'+value),
+            reason=> {
+                console.log('reject4-'+reason);
+                throw 6
+            }
+        )*/
+
+        var p1 = Promise.resolve(1);
+        var p2 = Promise.resolve(Promise.resolve(2));
+        // var p3 = Promise.resolve(Promise.reject(3));
+        /*p1.then(value => console.log(value));
+        p2.then(value => console.log(value));
+        p3.catch(reason => console.log(reason));
+
+        var pall = Promise.all([p1, p2]);
+        pall.then(
+            value => console.log('pall-resolve-' + value),
+            reason => console.log('pall-reject-' + reason)
+        )*/
+
+        var prace = Promise.race([p1, p2]);
+        prace.then(
+            value => console.log('prace-resolve-' + value),
+            reason => console.log('prace-reject-' + reason)
+        )/**/
+    </script>
+</body>
+
+</html>

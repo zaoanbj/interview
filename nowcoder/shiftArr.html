@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+          //删除数组 arr 第一个元素。不要直接修改数组 arr，结果返回新的数组
+          /* concat() 方法用于连接两个或多个数组。 arrayObject.concat(arrayX,arrayX,......,arrayX) 该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本 */
+          function curtail(arr) {
+              var arr2 = []
+              for(var i=0;i<arr.length;i++){
+                  arr2[i] = arr[i]
+              }
+              arr2.shift()
+              return arr2
+          }
+          console.log(curtail([ 1, 2, 3, 4 ,3], 9));
+          console.log(curtail([ 1, 2, 3, 4 ,3], 8));
+      </script>
+  </body>
+</html>

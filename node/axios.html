@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+</head>
+<body>
+    <button id="btn1">click1</button>
+    <button id="btn2">click2</button>
+    <button id="btn3">click3</button>
+    <script>
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+        axios.defaults.baseURL = 'http://localhost:8000';
+        btn1.onclick = function () {
+            axios.get('/axios',{
+                params:{
+                    name: 'zls',
+                    age: '40'
+                },
+                headers: {
+                    parents: 'aaa'
+                }
+            }).then(
+                value=>console.log(value),
+                reason=>console.log(reason)
+            )
+        }
+        btn2.onclick = function () {
+            axios.post('/axios',{
+                    username: 'admin',
+                    password: 'admin'
+                },
+                {
+                params: {
+                    width: '10px',
+                    height: '10px'
+                },
+                headers:{
+                    name: 'zls'
+                }
+            })
+        }
+        btn3.onclick = function () {
+            axios({
+                method: 'post',
+                url:'/axios',
+                params: {
+                    name: 'zls'
+                },
+                headers: {
+                    height: 10
+                },
+                data: {
+                    age: 40
+                }
+            }).then(
+                value => console.log(value)
+            )
+        }
+    </script>
+</body>
+</html>

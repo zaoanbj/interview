@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+          //在数组 arr 末尾添加元素 item。不要直接修改数组 arr，结果返回新的数组
+          function append1(arr, item) {
+              let arr2 = [];
+              return arr2.concat(arr, item);
+          }
+          function append2(arr, item) {
+              var arr2 = [];
+              for(var i=0; i<arr.length;i++){
+                  arr2[i] = arr[i]
+              }
+              arr2.push(item)
+              return arr2
+          }
+          console.log(append1([ 1, 2, 3, 4 ,3], 2));
+          console.log(append2([ 1, 2, 3, 4 ,3], 5));
+      </script>
+  </body>
+</html>

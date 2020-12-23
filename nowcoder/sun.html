@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+          //不考虑算法复杂度，用递归做：
+          function sum(arr) {
+              var len = arr.length;
+              if(len == 0){
+                  return 0;
+              } else if (len == 1){
+                  return arr[0];
+              } else {
+                  return arr[0] + sum(arr.slice(1));
+              }
+          }
+
+          //常规循环：
+          function sum(arr) {
+              var s = 0;
+              for (var i=arr.length-1; i>=0; i--) {
+                  s += arr[i];
+              }
+              return s;
+          }
+
+          //函数式编程 map-reduce：
+          function sum(arr) {
+              return arr.reduce(function(prev, curr, idx, arr){
+                  return prev + curr;
+              },0);
+          }
+
+          //forEach遍历：
+          function sum(arr) {
+              var s = 0;
+              arr.forEach(function(val, idx, arr) {
+                  s += val;
+              }, 0);
+
+              return s;
+          };
+
+          //eval：
+          function sum(arr) {
+              return eval(arr.join("+"));
+          };
+
+          console.log(sum([ 1, 2, 3, 4 ]));
+      </script>
+  </body>
+<!--
+
+参数	                                描述
+function(total,currentValue, index,arr)	必需。用于执行每个数组元素的函数。
+
+函数参数:
+参数	        描述
+total	        必需。初始值, 或者计算结束后的返回值。
+currentValue	必需。当前元素
+currentIndex	可选。当前元素的索引
+arr	            可选。当前元素所属的数组对象。
+
+initialValue	可选。传递给函数的初始值
+-->
+</html>
+

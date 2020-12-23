@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>interview 1</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript">
+    function maopao(arr) {
+
+        var xhr = new XMLHttpRequest();
+        xhr.onReadystatechange = function () {
+            if(xhr.readystate == 4){
+                if(xhr.status == 200) {
+                    alert(xhr.responseText)
+                }
+            }
+        }
+        xhr.open('get','url', false); //true 异步请求 false 同步请求
+        xhr.end(null);
+
+    }
+
+    //console.log(maopao());
+    debugger
+    var cal = counter();
+    cal();   //num=?
+    cal();   //num=?
+    var cal2 = counter();
+    cal();   //num=?
+    cal2();   //num=?
+    function counter(){
+        var num = 0;
+        function add(){
+            num++;
+            console.log(num);
+            return num;
+        }
+        return add;
+    }
+
+</script>
+</body>
+</html>

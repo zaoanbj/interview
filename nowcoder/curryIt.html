@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+          var fn = function (a, b, c) {return a + b + c}; curryIt(fn)(1)(2)(3);
+          function curryIt(fn) {
+              debugger
+              console.log(fn.length);
+              var l = fn.length, args = [];
+              var result = function (arg){
+                  args.push(arg)
+                  l--
+                  if(l == 0) {
+                      return fn.apply(this, args);
+                  } else {
+                      return result
+                  }
+              }
+              return result
+          }
+	</script>
+  </body>
+</html>

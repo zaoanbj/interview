@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+//    console.log(a);
+//    var a = null;
+//    console.log(a.xx);
+//    var i = 0
+
+//    function fn(){
+//        debugger
+//        if(i<10){
+//            i++
+//            console.log(i)
+//            fn()
+//        }
+//    }
+//    fn()
+
+//    try{
+//        let a ;
+//        a.b();
+//    }catch(error){
+//        console.log(error)
+//    }
+    
+    function doing() {
+        if(Date.now()%2===0){
+            console.log(这是偶数)
+        } else{
+            throw new Error('这是奇数');
+        }
+    }
+    try{
+        doing();
+    }catch(error){
+        console.log(error)
+    }
+
+//    instanceof
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+
+          //删除数组 arr 最后一个元素。不要直接修改数组 arr，结果返回新的数组
+
+          function pop1(arr) {
+              let arr2 = [];
+              arr.pop();
+              return arr2.concat(arr);
+          }
+
+          function pop2(arr) {
+              var arr2 = [];
+              for(var i=0; i<arr.length-1;i++){
+                  arr2[i] = arr[i]
+              }
+              return arr2
+          }
+
+          //利用slice
+          function truncate(arr) {
+              return arr.slice(0,-1);
+          }
+          //利用filter
+          function truncate(arr) {
+              return arr.filter(function(v,i,ar) {
+                  return i!==ar.length-1;
+              });
+          }
+          //利用push.apply+pop
+          function truncate(arr) {
+              var newArr=[];
+              [].push.apply(newArr, arr);
+              newArr.pop();
+              return newArr;
+          }
+          //利用join+split+pop    注意！！！：数据类型会变成字符型
+          function truncate(arr) {
+              var newArr = arr.join().split(',');
+              newArr.pop();
+              return newArr;
+          }
+          //利用concat+pop
+          function truncate(arr) {
+              var newArr = arr.concat();
+              newArr.pop();
+              return newArr;
+          }
+          //普通的迭代拷贝
+          function truncate(arr, item) {
+              var newArr=[];
+              for(var i=0;i<arr.length-1;i++){
+                  newArr.push(arr[i]);
+              }
+              return newArr;
+          }
+
+          console.log(pop1([ 1, 2, 3, 4 ,3]));
+          console.log(pop2([ 1, 2, 3, 4 ,3]));
+      </script>
+  </body>
+</html>

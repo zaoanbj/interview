@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>interview 1</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript">
+
+        //在数组 arr 开头添加元素 item。不要直接修改数组 arr，结果返回新的数组
+        /*
+          concat() 方法用于连接两个或多个数组。
+
+          arrayObject.concat(arrayX,arrayX,......,arrayX)
+          该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本
+        */
+
+        function prepend1(arr, item) {
+            var arr2 = [];
+            arr2.length = arr.length+1;
+            arr2[0] = item;
+            for(var i=0;i<arr.length;i++){
+                arr2[i+1] = arr[i]
+            }
+            return arr2
+        }
+
+        //利用concat
+        function prepend(arr, item) {
+            return [item].concat(arr);
+        }
+
+        //使用push.apply
+        function prepend(arr, item) {
+            var newArr=[item];
+            [].push.apply(newArr, arr);
+            return newArr;
+        }
+
+        //利用slice+unshift/splice
+        function prepend(arr, item) {
+            var newArr=arr.slice(0);
+            newArr.unshift(item);//newArr.splice(0,0,item);
+            return newArr;
+        }
+        //使用join+split+unshift/splice组合
+        function prepend(arr, item) {
+            var newArr=arr.join().split(',');
+            newArr.unshift(item);//newArr.splice(0,0,item);
+            return newArr;
+        }
+        //普通的迭代拷贝
+        function prepend(arr, item) {
+            var newArr=[];
+            for(var i=0;i<arr.length;i++){
+                newArr.push(arr[i]);
+            }
+            newArr.unshift(item);
+            return newArr;
+        }
+
+		console.log(prepend1([ 1, 2, 3, 4 ,3], 9));
+        console.log(prepend2([ 1, 2, 3, 4 ,3], 8));
+	</script>
+  </body>
+</html>

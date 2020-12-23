@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/less">
+    @import url('./1.less');
+    .center{
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        margin: auto;
+    }
+    .center:hover{
+        background: red;
+    }
+    #wrap{
+        position:relative;
+        width: 300px;
+        height: 300px;
+        border:red solid 1px;
+        margin: 0 auto;
+        .demo{
+            &:extend(.center all);
+            &:nth-child(1){
+                width: 150px;
+                height: 150px;
+                border:1px red solid;
+            }
+            &:nth-child(2){
+                width: 200px;
+                height: 200px;
+                border:1px green solid;
+            }
+        }
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <div class="demo"></div>
+        <div class="demo"></div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/less.js/3.10.0-beta/less.js"></script>
+</body>
+</html>

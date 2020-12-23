@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="#000000">
+      <title>interview 1</title>
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/javascript">
+          function cssStyle2DomStyle(sName) {
+              return sName.replace(/^\-/, '').replace(/(\-\w)/g, function(a, n) {
+                  console.log(a, n)
+                  return a[1].toUpperCase();
+              });
+          }
+          //console.log(cssStyle2DomStyle('font-size'));
+          document.querySelector('#root').innerText = cssStyle2DomStyle('font-size-zhang-lin');
+	</script>
+  </body>
+</html>

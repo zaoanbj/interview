@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>interview 1</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript">
+    function TreeCode() {
+        let Tree = function (ele) {
+            this.data = ele;
+            this.lchild = null;
+            this.rchild = null;
+        }
+
+        this.creatTree = function () {
+            let tree = new Tree('A');
+            tree.lchild = new Tree('B');
+            tree.rchild = new Tree('C');
+            tree.lchild.lchild = new Tree('D');
+            tree.lchild.lchild.lchild = new Tree('G');
+            tree.lchild.lchild.rchild = new Tree('H');
+            tree.rchild.lchild = new Tree('E');
+            tree.rchild.rchild = new Tree('F');
+            tree.rchild.lchild.rchild = new Tree('I');
+            return tree;
+        }
+    }
+
+    function ProOrderTraverse(tree) {
+        if (tree == null) return;
+        console.log(tree.data);
+        ProOrderTraverse(tree.lchild);
+        ProOrderTraverse(tree.rchild);
+    }
+
+    let myTree = new TreeCode();
+    console.log(myTree.creatTree());
+    console.log('前序遍历')
+    ProOrderTraverse(myTree.creatTree());
+
+</script>
+</body>
+</html>

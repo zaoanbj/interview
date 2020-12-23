@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dom{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <script>
+        var btn = document.getElementById('btn');
+        var xhr;
+        var flag = false;
+        btn.onclick = function(){
+            if(flag) xhr.abort();
+            xhr = new XMLHttpRequest();
+            flag = true;
+            xhr.open('GET', 'http://localhost:8000/delay');
+            xhr.send(null);
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 ){
+                    flag = false;
+                    if(xhr.status == 200){
+                        dom.innerHTML += xhr.responseText;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
