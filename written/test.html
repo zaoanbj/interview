@@ -81,7 +81,12 @@
     <div id="warp">1
         <!-- <div id="inner"></div> -->
     </div>
+    <div id="a">
+        <div id="b">123</div>
+    </div>
     <script>
+        document.getElementById('a').addEventListener('click', e => { console.log(1) });
+        document.getElementById('b').addEventListener('click', e => { e.preventDefault(); console.log(2) });
         var warp = document.getElementById('warp');
         function count() {
             warp.innerText = +warp.innerText + 1
@@ -139,7 +144,7 @@
 
         }
 
-        console.log(getUrlParam('http://www.nowcoder.com?key=1&key=2&key=3&test=4#hehe key'));
+        //console.log(getUrlParam('http://www.nowcoder.com?key=1&key=2&key=3&test=4#hehe key'));
 
         // console.log(typeof 'zls');
         // console.log(typeof 123);
@@ -157,6 +162,78 @@
         // console.log(String(unde));
         // var num = undefined
         // console.log(Number(num));
+
+        /* var obj = {name: 'zx'}
+        var obj2 = Object.assign(obj);
+        console.log(obj2);
+        obj2.name = 'zls';
+        console.log(obj);
+        console.log(obj2); */
+
+        var obj1 = { name: 'zx' }
+        var obj2 = {}
+        obj2 = Object.create(obj1, {
+            age: {
+                value: 20,
+                writeable: true,
+                configurable: true,
+                enumerable: true
+            }
+        })
+
+        console.log(obj2);
+
+        var obj3 = { fristName: 'z', lastName: 's' }
+        Object.defineProperties(obj3, {
+            fullName: {
+                get: function () {
+                    return this.fristName + '' + this.lastName;
+                },
+                set: function (txt) {
+                    var arr = txt.split('')
+
+                    return
+                }
+            }
+        })
+
+        var obj4 = {
+            fristName: 'zz',
+            lastName: 'ss',
+            get fullName() {
+
+            },
+            set fullName() {
+
+            }
+        }
+
+        function checkType(target) {
+            return Object.prototype.toString.call(target).slice(8, -1)
+        }
+
+        function clone(target) {
+            var result = '', targetType = checkType(target);
+            if (targetType === 'object') {
+                result = {}
+            } else if (target === 'array') {
+                result = []
+            } else {
+                return target
+            }
+
+            for (let i in target) {
+                let value = target[i]
+                if(checkType(value) === 'object' || checkType(value) === 'array'){
+                    result[i] = clone(value)
+                } else {
+                    result[i] = value
+                }
+            }
+        }
+
+        //XHRHttpRequest
+
     </script>
     <table>
         <thead>
