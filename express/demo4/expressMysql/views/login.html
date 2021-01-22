@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/login" method="POST" >
+        <table>
+            <tr>
+                <td>
+                    <input type="text" value="admin" name='name' />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" value="" name='pw' />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">go</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
