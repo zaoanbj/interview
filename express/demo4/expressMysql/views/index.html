@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        {{ each arr}}
+        <tr>
+            <td align="center"><img src="/public/img/{{ $value.img }}"" alt="" /></td>
+            <td align="center">{{ $value.id }}</td>
+            <td align="center">{{ $value.name }}</td>
+            <td align="center">{{ $value.age }}</td>
+            <td align="center">{{ $value.gender }}</td>
+            <td align="center">
+                <a href="/getone?id={{ $value.id }}">查看</a>
+                <a href="/upuser?id={{ $value.id }}">修改</a>
+                <a href="/delete?id={{ $value.id }}">删除</a>
+            </td>
+        </tr>
+        {{ /each }}
+    </table>
+</body>
+
+</html>

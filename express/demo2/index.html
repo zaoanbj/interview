@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <table id="tab" border="1">
+        <tr>
+            <td colspan="3">1</td>
+            <td colspan="3">2</td>
+            <td colspan="3">3</td>
+        </tr>
+    </table>
+    <script>
+        let tt = ''
+        const xhr = new XMLHttpRequest();
+        xhr.open('get', './post');
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                let t = xhr.responseText;
+                t = JSON.parse(t);
+                t.forEach(element => {
+                    tt += ` <td><img src='./img/${element.type}.png' />${element.name}</td><td>${element.ctime}</td><td>${element.size}</td> `
+                });
+                $('#tab').append(`<tr>${tt}</tr>`)
+            }
+        }
+    </script>
+</body>
+
+</html>

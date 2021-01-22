@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        首页
+        <a href="/post">post</a>
+    </header>
+    <content>
+        <ul>
+            {{each arr}}
+            <li>{{ $value.name }}/{{ $value.message }}</li>
+            {{/each}}
+        </ul>
+    </content>
+    <!-- <script type="text/javascript" src="/public/js/index.js"></script -->
+</body>
+
+</html>
